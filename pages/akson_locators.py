@@ -30,6 +30,9 @@ class Header_top(StartPage):
     choice_my_msk = WebElement(xpath='//p[@class="city-choice__city ui-text-small ui-pb-2" and contains(text(),'
                                      ' "Москва")]')
 
+    # Выбор города по автолокации
+    choice_location = WebElement(xpath='//p[@class="city-choice__city ui-text-small ui-pb-2 city-choice__city_active"]')
+
     # Контактный телефон
     contact_phone = WebElement(xpath='//a[@class="top-bar__contact-phone"]')
 
@@ -114,8 +117,14 @@ class Header_sticky(StartPage):
     # Кнопка поиска
     search_button = WebElement(xpath='//button[@class="search__button-find search__button-find_focused"]')
 
-    # Результат поиска
+    # Результат поиска в заголовке
     result_search = WebElement(xpath='//h1[@class="search__h1"]')
+
+    # Название первого товара в результате поиска
+    result_product = WebElement(xpath='//div[@class="product-matrix__info info"]/a/span')
+
+    # Таблица результата поиска со всеми товарами
+    result_all_goods = WebElement(xpath='//div[@class="goods-list__content"]')
 
     # Ссылка на меню авторизации
     profile = WebElement(xpath='//a[@href="/auth/"]')
@@ -351,3 +360,188 @@ class Footer_content(StartPage):
     # Раздел "Подать заявку" на странице "Аренда площадей"
     btn_rent = WebElement(xpath='//button[@class="arenda-header-apply arenda-btn-apply js-handler-modal '
                                 '_bid_modalOpen-js"]')
+
+
+class Catalog_links(StartPage):
+    """ Локаторы раздела "Каталог". """
+
+    # Подраздел "Сделай сам"
+    do_it = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Сделай сам")]')
+
+    # Раздел "Готовые решения"
+    turnkey_solutions = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), '
+                                              '"Готовые решения")]')
+
+    # Раздел "Строительные материалы"
+    construction_materials = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), '
+                                              '"Строительные материалы")]')
+
+    # Подраздел "Строительные материалы"
+    ctl_construction_materials = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                                  '"Строительные материалы")]')
+
+    # Раздел "Пиломатериалы"
+    lumber = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Пиломатериалы")]')
+
+    # Подраздел "Пиломатериалы"
+    ctl_lumber = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Пиломатериалы")]')
+
+    # Раздел "Водоснабжение"
+    water_supply = WebElement(xpath='//a[@class="categories__root-item" and contains(text(),'
+                                    ' "Водоснабжение и отопление")]')
+
+    # Подраздел "Водоснабжение"
+    ctl_water_supply = WebElement(xpath='//div[@class="categories__children-title" and contains(text(),'
+                                        ' "Водоснабжение и отопление")]')
+
+    # Раздел "Вентиляция"
+    ventilation = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Вентиляция")]')
+
+    # Подраздел "Вентиляция"
+    ctl_ventilation = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Вентиляция")]')
+
+    # Раздел "Электротовары"
+    electrical = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Электротовары")]')
+
+    # Подраздел "Электротовары"
+    ctl_electrical = WebElement(xpath='//div[@class="categories__children-title" and contains(text(),'
+                                      ' "Электротовары")]')
+
+    # Раздел "Скобяные изделия"
+    hardware = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Скобяные изделия")]')
+
+    # Подраздел "Скобяные изделия"
+    ctl_hardware = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                    '"Скобяные изделия")]')
+
+    # Раздел "Керамическая плитка"
+    ceramic_tile = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Керамическая плитка")]')
+
+    # Подраздел "Керамическая плитка"
+    ctl_ceramic_tile = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                        '"Керамическая плитка")]')
+
+    # Раздел "Краски"
+    paints = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Краски")]')
+
+    # Подраздел "Краски"
+    ctl_paints = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                  '"Краски")]')
+
+    # Раздел "Инструменты для ремонта и строительства"
+    tools = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), '
+                             '"Инструменты для ремонта и строительства")]')
+
+    # Подраздел "Инструменты для ремонта и строительства"
+    ctl_tools = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                 '"Инструменты для ремонта и строительства")]')
+
+    # Раздел "Сантехника"
+    plumbing = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Сантехника")]')
+
+    # Подраздел "Сантехника"
+    ctl_plumbing = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Сантехника")]')
+
+    # Раздел "Отделка стен и потолков"
+    decoration = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Отделка стен и потолков")]')
+
+    # Подраздел "Отделка стен и потолков"
+    ctl_decoration = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                '"Отделка стен и потолков")]')
+
+    # Раздел "Обои"
+    wallpaper = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Обои")]')
+
+    # Подраздел "Обои"
+    ctl_wallpaper = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Обои")]')
+
+    # Раздел "Напольные покрытия"
+    floor_coverings = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Напольные покрытия")]')
+
+    # Подраздел "Напольные покрытия"
+    ctl_floor_coverings = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                     '"Напольные покрытия")]')
+
+    # Раздел "Двери"
+    doors = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Двери")]')
+
+    # Подраздел "Двери"
+    ctl_doors = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Двери")]')
+
+    # Раздел "Окна"
+    windows = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Окна")]')
+
+    # Подраздел "Окна"
+    ctl_windows = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Окна")]')
+
+    # Раздел "Системы хранения"
+    storage_systems = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Системы хранения")]')
+
+    # Подраздел "Системы хранения"
+    ctl_storage_systems = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                           '"Системы хранения")]')
+
+    # Раздел "Освещение"
+    lighting = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Освещение")]')
+
+    # Подраздел "Освещение"
+    ctl_lighting = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Освещение")]')
+
+    # Раздел "Мебель"
+    furniture = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Мебель")]')
+
+    # Подраздел "Мебель"
+    ctl_furniture = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Мебель")]')
+
+    # Раздел "Интерьер и декор"
+    decor = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Интерьер и декор")]')
+
+    # Подраздел "Интерьер и декор"
+    ctl_decor = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Интерьер и декор")]')
+
+    # Раздел "Бытовая техника"
+    appliances = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Бытовая техника")]')
+
+    # Подраздел "Бытовая техника"
+    ctl_appliances = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                      '"Бытовая техника")]')
+
+    # Раздел "Автотовары"
+    auto_products = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Автотовары")]')
+
+    # Подраздел "Автотовары"
+    ctl_auto_products = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                         '"Автотовары")]')
+
+    # Раздел "Товары для отдыха и хобби"
+    hobby = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Товары для отдыха и хобби")]')
+
+    # Подраздел "Товары для отдыха и хобби"
+    ctl_hobby = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                 '"Товары для отдыха и хобби")]')
+
+    # Раздел "Товары для дома"
+    household_products = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Товары для дома")]')
+
+    # Подраздел "Товары для дома"
+    ctl_household_products = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                              '"Товары для дома")]')
+
+    # Раздел "Посуда"
+    tableware = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Посуда")]')
+
+    # Подраздел "Посуда"
+    ctl_tableware = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Посуда")]')
+
+    # Раздел "Товары для сада"
+    garden_supplies = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Товары для сада")]')
+
+    # Подраздел "Товары для сада"
+    ctl_garden_supplies = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), '
+                                           '"Товары для сада")]')
+
+    # Раздел "Умный дом"
+    smart_house = WebElement(xpath='//a[@class="categories__root-item" and contains(text(), "Умный дом")]')
+
+    # Подраздел "Умный дом"
+    ctl_smart_house = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Умный дом")]')
