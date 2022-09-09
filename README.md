@@ -1,6 +1,6 @@
 # Akson website design test 
 Contains automated tests to check the functionality of the site.
-Autotests use PyTest, Selenium and PageObjec tools.
+.Autotests use PyTest, Selenium and PageObjec tools.
 
 How to run:
 1) Autotests are located in the tests folder.
