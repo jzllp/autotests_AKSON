@@ -545,3 +545,63 @@ class Catalog_links(StartPage):
 
     # Подраздел "Умный дом"
     ctl_smart_house = WebElement(xpath='//div[@class="categories__children-title" and contains(text(), "Умный дом")]')
+
+
+class Card_product(StartPage):
+    """ Локаторы карточки товара. """
+
+    # Раздел карточки товара
+    card_in_card = WebElement(xpath='//div[@class="card"]')
+
+    # Код товара в карточке
+    card_code = WebElement(xpath='//div[@class="card__name-code"]')
+
+    # Название товара в заголовке карточки товара
+    title_card = WebElement(xpath='//h1[@class="ui-h2 card__name-title"]')
+
+    # Код первого товара в результатах поиска
+    result_code = WebElement(xpath='//div[@class="info-code mb-1 text-body-regular text-color-secondary"]')
+
+    # Цена первого товара в результатах поиска
+    result_price = WebElement(xpath='//span[@class="info-price__value text-header-l-bold"]')
+
+    # Цена товара в карточке товара
+    card_price = WebElement(xpath='//div[@class="ui-h1 card__sale-price"]')
+
+    # Пункт меню 'Сравнить товары'
+    product_comparison = WebElement(xpath='//label[@class="checkbox checkbox__label text-body-regular '
+                                          'card__checkbox mr-2"]')
+
+    # Миниатюра фото товара
+    photo_box = WebElement(xpath='//div[@class="image-box"]')
+
+    # Развернутое фото товара
+    photo_full = WebElement(xpath='//div[@class="modal"]')
+
+    # Ссылка на пункт меню 'Характеристики'
+    characteristics_link = WebElement(xpath='//li[@class="product-slist__item" and contains(text(), "Характеристики")]')
+
+    # Заголовок раздела 'Характеристики' товара
+    characteristics = WebElement(xpath='//div[@class="product-ahl__hl" and contains(text(), "Характеристики товара")]')
+
+    # Ссылка на пункт меню 'Отзывы'
+    reviews_link = WebElement(xpath='//li[@class="product-slist__item" and contains(text(), "Отзывы")]')
+
+    # Заголовок раздела 'Отзывы о товаре'
+    reviews = WebElement(xpath='//div[@class="feedback-container__title" and contains(text(), "Отзывы о товаре")]')
+
+    # Ссылка на пункт меню 'Вопросы и ответы'
+    answers_link = WebElement(xpath='//li[@class="product-slist__item" and contains(text(), "Вопросы и ответы")]')
+
+    # Заголовок раздела 'Вопросы и ответы покупателей'
+    answers = WebElement(xpath='//div[@class="feedback-container__title" and contains(text(), '
+                               '"Вопросы и ответы покупателей")]')
+
+    # Ссылка на пункт меню 'Рекомендуем купить'
+    recommend_link = WebElement(xpath='//li[@class="product-slist__item" and contains(text(), "Рекомендуем купить")]')
+
+    # Заголовок раздела 'Похожие товары'
+    recommend = WebElement(xpath='//div[@class="horizontal__title mb-3" and contains(text(), "Похожие товары")]')
+
+    # Кнопка выхода из карточки товара
+    btn_backwards = WebElement(xpath='//a[@class="backwards mr-2"]')
