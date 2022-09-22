@@ -220,6 +220,22 @@ class WebElement(object):
         # Delete element:
         self._web_driver.execute_script("arguments[0].remove();", element)
 
+    def double_click(self, hold_seconds=0, x_offset=1, y_offset=1):
+        """ Double click on an element. """
+
+        element = self.wait_to_be_clickable()
+
+        if element:
+            action = ActionChains(self._web_driver)
+            action.move_to_element_with_offset(element, x_offset, y_offset).\
+                pause(hold_seconds).double_click(on_element=element).perform()
+        else:
+            msg = 'Element with locator {0} not found'
+            raise AttributeError(msg.format(self._locator))
+
+        if self._wait_after_click:
+            self._page.wait_page_loaded()
+
 
 class ManyWebElements(WebElement):
 

@@ -605,3 +605,68 @@ class Card_product(StartPage):
 
     # Кнопка выхода из карточки товара
     btn_backwards = WebElement(xpath='//a[@class="backwards mr-2"]')
+
+    # Название бренда в характеристиках карточки товара
+    brand = WebElement(xpath='//li[2]/div[@class="product-stats__value"]')
+
+    # Название страны в характеристиках карточки товара
+    country = WebElement(xpath='//li[3]/div[@class="product-stats__value"]')
+
+
+class Categories_sections(StartPage):
+    """ Локаторы категорий товаров результата поиска. """
+
+    # Первая порядковая категория
+    first_section = WebElement(xpath='//div[1][@class="section"]')
+
+    # Заголовок выбранной категории
+    category_name = WebElement(xpath='//h1[@class="catalog__h1"]')
+
+    # Название корневой категории товара в карточке товара
+    root_category = WebElement(xpath='//li[5]//span[@class="breadcrumbs__name"]')
+
+    # Название первого товара в выбранной категории товаров
+    first_item = WebElement(xpath='//a[@class="info-title text-body-regular text-color-headline"]')
+
+    # Спойлер раздела Категории
+    spoiler = WebElement(xpath='//div[@class="spoiler"]')
+
+    # Последняя порядковая категория
+    last_section = WebElement(xpath='//div[11][@class="section"]')
+
+    # Фильтр минимальной стоимости товара
+    min_price = WebElement(xpath='//input[@class="filter__input"]')
+
+    # Выбранная минимальная цена товаров
+    min_price_impl = WebElement(xpath='//a[@class="filters__implemented"]')
+
+    # Фильтр максимальной стоимости товара
+    max_price = WebElement(xpath='//input[2][@class="filter__input"]')
+
+    # Цена всех товаров результата поиска
+    price_all = ManyWebElements(xpath='//span[@class="info-price__value text-header-l-bold"]')
+
+    # 1-й бренд в списке фильтра
+    brand_first = WebElement(xpath='//li[@class="filters__option"]')
+
+    # 1-я страна производитель в списке фильтра
+    country_first = WebElement(xpath='//div[3]/div[2]//li[@class="filters__option"]')
+
+    # Сортировка по цене в найденных товарах (not active)
+    sort_by_price = WebElement(xpath='//div[@class="sort__button"]')
+
+    # Сортировка по цене в найденных товарах (active)
+    sort_by_price_act = WebElement(xpath='//div[@class="sort__button sort__button_active"]')
+
+    # Минимальная цена в разделе фильтра "Цена"
+    min_price_by_price = WebElement(xpath='//span[@class="filter__bottom-labels"]/span')
+
+    # Максимальная цена в разделе фильтра "Цена"
+    max_price_by_price = WebElement(xpath='//span[@class="filter__bottom-labels"]/span[2]')
+
+    # Цена первого товара в результатах поиска (сортировка по цене)
+    sort_min_price = WebElement(xpath='//span[@class="info-price__value text-header-l-bold color-red"]')
+
+    # Цена первого товара в результатах поиска (сортировка по цене, не в акции)
+    sort_max_price = WebElement(xpath='//span[@class="info-price__value text-header-l-bold"]')
+
