@@ -3,6 +3,8 @@ Contains automated tests to check the functionality of the site.
 
 Autotests use PyTest, Selenium and PageObjec tools.
 
+Tests are designed for educational purposes, they test only part of the functionality, and, of course, can be improved.
+
 How to run:
 1) Autotests are located in the tests folder.
 2) Download driver for Chrome:
