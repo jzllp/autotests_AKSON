@@ -1,5 +1,5 @@
 # Akson website design test 
-Contains automated tests to check the functionality of the site.
+Contains automated tests to check the functionality of the site https://akson.ru/.
 
 Autotests use PyTest, Selenium and PageObjec tools.
 
